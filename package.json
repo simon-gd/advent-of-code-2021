@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/simon-gd/advent-of-code-2021/issues"
   },
-  "homepage": "https://github.com/simon-gd/advent-of-code-2021#readme"
+  "homepage": "https://github.com/simon-gd/advent-of-code-2021#readme",
+  "dependencies": {
+    "exponential-regression": "^1.0.2",
+    "regression": "^2.0.1"
+  }
 }
