@@ -1,7 +1,5 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day9.txt', 'utf8');
-// Split the text into an array of strings
 let lines = text.split('\r\n');
 let width = lines[0].length;
 let height = lines.length;

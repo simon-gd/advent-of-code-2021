@@ -1,5 +1,4 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day6.txt', 'utf8');
 let ages = text.split(',').map(x => parseInt(x));
 let counts = {

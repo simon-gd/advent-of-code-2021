@@ -1,5 +1,4 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day5_input.txt', 'utf8');
 let line = text.split('\r\n');
 let grid = {};

@@ -1,5 +1,4 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day7.txt', 'utf8');
 let positions = text.split(',').map(x => parseInt(x));
 let minP = Math.min(...positions);

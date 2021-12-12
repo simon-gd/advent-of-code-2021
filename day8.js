@@ -1,7 +1,5 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day8.txt', 'utf8');
-// Split the text into an array of strings
 let lines = text.split('\r\n');
 //console.log(lines);
 let io = lines.map(x => x.split(' | '));
@@ -78,7 +76,6 @@ for(let i = 0; i < inputs.length; i++) {
     let d960   = inputs[i].filter(x => x.length === 6);
     let d235counts = countLetters(d235.join(''));
     let d960counts = countLetters(d960.join(''));
-    // first lets find 'f' it happens 3 times in each of d960 and in one
     let f = d960counts[one[0]] === 3 ? one[0] : d960counts[one[1]] === 3 ? one[1] : null;
     let c = f == one[0] ? one[1] : one[0];
     let a = seven.replace(c, '').replace(f, '');

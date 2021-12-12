@@ -1,5 +1,4 @@
 const fs = require('fs');
-// Load in a text file
 let text = fs.readFileSync('day4_input.txt', 'utf8');
 let a = text.split('\r\n');
 let numbers = a[0].split(',').map(Number);
