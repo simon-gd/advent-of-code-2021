@@ -1,11 +1,12 @@
 const fs = require('fs');
 let text = fs.readFileSync('day14.txt', 'utf8');
-let template = 'OKSBBKHFBPVNOBKHBPCO';
-let lines = text.split('\r\n').map(x => x.split(' -> '));
-//console.log(lines);
+//let template = 'OKSBBKHFBPVNOBKHBPCO';
+//let lines = text.split('\r\n').map(x => x.split(' -> '));
+
+
+// Example
 /*
 let template = 'NNCB'
-
 let insertions = `CH -> B
 HH -> N
 CB -> H
@@ -25,7 +26,6 @@ CN -> C`;
 let lines = insertions.split('\n').map(x => x.split(' -> '));
 */
 console.log(lines);
-
 
 let stepsPart1 = 10;
 let stepsPart2 = 40;
@@ -83,9 +83,7 @@ function countLetters2(pairMap) {
     let letters = {};
     for(let pair in pairMap) {
         let a = pair.split('');
-
         let c = pairMap[pair];
-        //console.log('countLetters2', a, c);
         if(!letters[a[0]]) {
             letters[a[0]] = c;
         } else {
@@ -100,16 +98,11 @@ function countLetters2(pairMap) {
     return letters;
 }
 for(let step=0; step < stepsPart2; step++) {
-    //let new_templated = "";
     let newOccurances = {};
     for(let pattern in pairOccurances) {
         let count = pairOccurances[pattern];
-        //if(count <= 0) {
-        //    continue;
-        //}
         let op = lines.find(x => x[0] === pattern);
         if(op) {
-            //pairOccurances[pattern] -= count; // remove occurances since we are splitting them
             let new_template = op[0][0] + op[1];
            
             if(newOccurances[new_template])    {
@@ -124,11 +117,9 @@ for(let step=0; step < stepsPart2; step++) {
             } else {
                 newOccurances[new_template2] = count;
             }
-           
         }
     }
     pairOccurances = newOccurances;
-    //console.log(step+1, pairOccurances);
 }
 console.log(pairOccurances);
 let letters2 = countLetters2(pairOccurances);
@@ -136,13 +127,10 @@ for(let letter in letters2) {
     letters2[letter] = Math.floor(letters2[letter] / 2);
     //console.log(letter, letters2[letter]);
 }
-let firstLetter = template[0];
 let lastLetter = template[template.length-1];
-letters2[firstLetter]++;
 letters2[lastLetter]++;
 
 const minLetter2 = Object.keys(letters2).reduce((a, b) => letters2[a] < letters2[b] ? a : b);
 const maxLetter2 = Object.keys(letters2).reduce((a, b) => letters2[a] > letters2[b] ? a : b);
 console.log('Part 2', 'min', minLetter2, 'max', maxLetter2);
 console.log("Part 2", letters2, 'difference', letters2[maxLetter2] - letters2[minLetter2]);
-// 4607749009682 is too low so just add 1?
