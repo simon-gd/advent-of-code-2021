@@ -69,6 +69,7 @@ while(queue.length > 0) {
             }
             queue.push([n[0], n[1], r + newGrid[n[0]][n[1]]]);
         }
+        // funny, only changes value by 1, but still I guess we need to make sure we prioritize the shortest paths
         queue.sort((a, b) => a[2] - b[2]);
     
     }
