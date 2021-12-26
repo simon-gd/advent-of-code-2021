@@ -17,8 +17,14 @@
   },
   "homepage": "https://github.com/simon-gd/advent-of-code-2021#readme",
   "dependencies": {
+    "@assemblyscript/loader": "^0.19.22",
+    "@stdlib/ndarray-array": "0.0.8",
     "exponential-regression": "^1.0.2",
+    "ndarray": "^1.0.19",
     "regression": "^2.0.1",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.19.22"
   }
 }
